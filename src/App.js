@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comics: [],
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://gateway.marvel.com:443/v1/public/characters/1009718/comics?apikey=117b458635106b9721749634b53fb07b')
+      .then(res => res.json())
+      .then(d => this.setState({ comics: d.data.results }))
+  }
+
+    render() {
+      return (
+      <div>
+        {this.state.comics.map((comic) => (
+            <div key={comic.id}>
+                  <h2>{comic.title}</h2>
+                  <p>{comic.description}</p>
+                  </div>
+       ))}
       </div>
-    );
+      )
   }
 }
 
 export default App;
+
