@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-class Comics extends React.Component {
+class Comics extends Component {
   constructor(props) {
     super(props);
 
@@ -11,19 +11,14 @@ class Comics extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://gateway.marvel.com:443/v1/public/characters/1009718/comics?apikey=117b458635106b9721749634b53fb07b')
-      .then(res => res.json())
-      .then(json => { 
-        const characterId = json.d.data.results.id;
-        return fetch(`https://gateway.marvel.com:443/v1/public/comics?characters=${characterId}apikey=117b458635106b9721749634b53fb07b`)
-      })
+    fetch('https://gateway.marvel.com:443/v1/public/characters?name=gambit&apikey=117b458635106b9721749634b53fb07b')
       .then(res => res.json())
       .then(d => this.setState({ comics: d.data.results }))
   }
 
     render() {
       return (
-      <div classname="App">
+      <div classname="Comics">
                 {this.state.comics.map((comic) => (
                     <div key={comic.id}>
                           <h2>{comic.title}</h2>
