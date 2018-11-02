@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-class Comics extends Component {
+class Comics extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,14 +18,13 @@ class Comics extends Component {
 
     render() {
       return (
-      <div classname="Comics">
-                {this.state.comics.map((comic) => (
-                    <div key={comic.id}>
-                          <h2>{comic.title}</h2>
-                          <p>{comic.description}</p>
-                    </div>
-                ))}
-
+      <div id="Comics">
+            {this.state.comics.map((comic) => (
+                <div key={comic.id}>
+                      <h2>{comic.title}</h2>
+                      <p>{comic.description}</p>
+                </div>
+            ))}
       </div>
       )
   }

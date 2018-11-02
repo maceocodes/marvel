@@ -5,8 +5,9 @@ import './App.css';
 class Search extends React.Component {
     render(props) {
         return (
-            <div className="search">
-                <input type="text"/>
+            <div>
+            <h2>Marvel Comic Search</h2>
+            <p>Search most recent comics by Character</p>
             </div>
         )
     }

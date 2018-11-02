@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import Header from './Header';
+import React from 'react';
 import Search from './Search';
-import Comics from './Comics';
+import Heading from './Heading';
 import './App.css';
 
 
-class App extends Component {
+class App extends React.Component {
     render() {
       return (
         <div>
-          <Header />
           <Search />
-          <Comics />
+          <Heading />
         </div>
       )
   }
