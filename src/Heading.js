@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 
-class Search extends React.Component {
+class Heading extends React.Component {
     render(props) {
         return (
             <div>
@@ -13,6 +13,6 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default Heading;
 
 

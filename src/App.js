@@ -15,8 +15,8 @@ class App extends React.Component {
     }
   }
 
-async componentDidMount() {
-    fetch('https://gateway.marvel.com:443/v1/public/characters?name=wolverine&apikey=117b458635106b9721749634b53fb07b')
+getComics = async () => {
+    await fetch('https://gateway.marvel.com:443/v1/public/characters?name=wolverine&apikey=117b458635106b9721749634b53fb07b')
       .then(res => res.json())
       .then(json => {
       const characterId = json.data.results[0].id;
@@ -28,13 +28,11 @@ async componentDidMount() {
 
 
 
-
-
 render() {
   return (
   <div>
     <Heading />
-    <Search />
+    <Search loadComics={this.getComics}/>
     <div>
           {this.state.comics.map(c => {
             return ( <ul>
