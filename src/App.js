@@ -11,7 +11,7 @@ class App extends React.Component {
 
     this.state = {
       comics: [],
-      search: "",
+      search: ""
     }
   }
 
@@ -23,16 +23,16 @@ getComics = async () => {
         return fetch(`https://gateway.marvel.com:443/v1/public/comics?characters=${characterId}&apikey=117b458635106b9721749634b53fb07b`)
       })
       .then(res => res.json())
-      .then(d => ({comics: d.data.results}));  
+      .then(d => this.setState({comics: d.data.results}));  
       }
 
 
 
-render(props) {
+render() {
   return (
   <div>
     <Heading />
-    <Search loadComics={this.props.getComics} />
+    <Search loadComics={this.getComics} />
     <div>
           {this.state.comics.map(c => {
             return ( <ul>
