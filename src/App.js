@@ -11,12 +11,14 @@ class App extends React.Component {
 
     this.state = {
       comics: [],
-      search: ""
+      search: "",
     }
-  }
+  };
 
-getComics = async () => {
-    await fetch('https://gateway.marvel.com:443/v1/public/characters?name=wolverine&apikey=117b458635106b9721749634b53fb07b')
+
+
+getComics = async (name) => {
+    await fetch(`https://gateway.marvel.com:443/v1/public/characters?name=${name}&apikey=117b458635106b9721749634b53fb07b`)
       .then(res => res.json())
       .then(json => {
       const characterId = json.data.results[0].id;
@@ -32,7 +34,7 @@ render() {
   return (
   <div>
     <Heading />
-    <Search loadComics={this.getComics} />
+    <Search loadComics={this.getComics()} />
     <div>
           {this.state.comics.map(c => {
             return ( <ul>

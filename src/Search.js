@@ -1,16 +1,30 @@
 import React from 'react';
 import './App.css';
 
-
 class Search extends React.Component {
-    render (props) {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            value:''
+        };
+    }
+
+
+handleChange = (event) => {
+    this.setState({ value: event.target.value });
+  }
+
+    render () {
         return (
         <div>
             <input 
               type="search"
               placeholder="character"
+              value={this.state.value}
+              onChange={this.handleChange}
             />
-            <button onClick={this.props.loadComics}>Search</button>
+            <button onClick={() => this.props.loadComics(this.state.value)}>Search</button>
         </div>
         )
     }
