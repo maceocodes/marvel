@@ -23,16 +23,16 @@ getComics = async () => {
         return fetch(`https://gateway.marvel.com:443/v1/public/comics?characters=${characterId}&apikey=117b458635106b9721749634b53fb07b`)
       })
       .then(res => res.json())
-      .then(d => this.setState ({comics: d.data.results}));  
+      .then(d => ({comics: d.data.results}));  
       }
 
 
 
-render() {
+render(props) {
   return (
   <div>
     <Heading />
-    <Search loadComics={this.getComics}/>
+    <Search loadComics={this.props.getComics} />
     <div>
           {this.state.comics.map(c => {
             return ( <ul>

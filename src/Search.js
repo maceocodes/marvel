@@ -2,18 +2,19 @@ import React from 'react';
 import './App.css';
 
 
-const Search = (props) => {
+class Search extends React.Component {
+    render (props) {
         return (
-            <div>
-                <input 
-                  type="search"
-                  onSearch={props.loadComics}
-                  placeholder="character"
-                />
-                <button>Search</button>
-            </div>
+        <div>
+            <input 
+              type="search"
+              placeholder="character"
+            />
+            <button onClick={this.props.loadComics}>Search</button>
+        </div>
         )
     }
+}
 
 export default Search;
 
