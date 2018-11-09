@@ -20,7 +20,8 @@ getComics = async (name) => {
       .then(res => res.json())
       .then(json => {
       const characterId = json.data.results[0].id;
-        return fetch(`https://gateway.marvel.com:443/v1/public/comics?characters=${characterId}&apikey=117b458635106b9721749634b53fb07b`)
+        return fetch(`https://gateway.marvel.com:443/v1/public/comics?characters=${characterId}&apikey=117b458635106b9721749634b53fb07b`, 
+      {cache: "force-cache"})
       })
       .then(res => res.json())
       .then(d => this.setState({comics: d.data.results}));  
@@ -28,18 +29,24 @@ getComics = async (name) => {
 
 
 
+
 render() {
+  console.log(this.state.comics)
   return (
   <div>
     <Heading />
     <Search loadComics={this.getComics} />
     <div>
-          {this.state.comics.map(c => {
-            return ( <ul>
-              <li key={c.id}>{c.title}</li>
-            </ul>
-            )
-          })}          
+      <ul className="comics">
+        {this.state.comics.map(c => 
+          <li key={c.id}>
+            <p> {c.title} </p>
+            <p> {c.description} </p>
+            <img src={c.thumbnail.path + "." +c.thumbnail.extension}/>
+            <li>{c.creators.items.map(cr => <li>{cr.name}</li>)}</li>
+          </li>
+        )}          
+      </ul>
     </div>
   </div>
   )

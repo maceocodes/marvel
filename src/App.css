@@ -17,8 +17,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
+
   color: #61dafb;
 }
 
@@ -29,4 +29,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.comics li img {
+  width: 50px;
 }
