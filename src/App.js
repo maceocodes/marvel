@@ -1,8 +1,12 @@
 import React from 'react';
 import Heading from  './Heading';
-import Search from  './Search'
+import Search from  './Search';
+import Creators from './Creators';
 import './App.css';
-
+import {
+  BrowserRouter,
+  Route
+} from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -27,12 +31,9 @@ getComics = async (name) => {
       .then(d => this.setState({comics: d.data.results}));  
       }
 
-
-
-
 render() {
-  console.log(this.state.comics)
   return (
+    
   <div>
     <Heading />
     <Search loadComics={this.getComics} />
@@ -47,6 +48,11 @@ render() {
           </li>
         )}          
       </ul>
+      <BrowserRouter>
+      <div className="Creators">
+      <Route exact path="/Creators" render ={ () => <Creators /> } />
+      </div>
+      </BrowserRouter>
     </div>
   </div>
   )
