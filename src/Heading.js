@@ -7,7 +7,7 @@ class Heading extends React.Component {
         return (
             <div>
             <h2>Marvel Comic Search</h2>
-            <p>Search most recent comics by Character</p>
+            <p>Search most recent comics by Character or Creator</p>
             </div>
         )
     }
