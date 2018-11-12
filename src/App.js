@@ -48,11 +48,11 @@ render() {
           </li>
         )}          
       </ul>
-      <BrowserRouter>
-      <div className="Creators">
-      <Route exact path="/Creators" render ={ () => <Creators /> } />
-      </div>
-      </BrowserRouter>
+        <BrowserRouter>
+          <div className="container">
+          <Route path="/creators" component={Creators} />
+          </div>
+        </BrowserRouter>
     </div>
   </div>
   )

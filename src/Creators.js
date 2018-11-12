@@ -1,18 +1,16 @@
 import React from 'react';
 import './App.css';
-import {
-  BrowserRouter,
-  Route
-} from 'react-router-dom';
+
 
 class Creators extends React.Component {
 
   constructor(props){
       super(props);
       this.state = {
-
-      };
-  }
+        comics: [],
+        value:''
+    };
+}
 
 getCreators = async (firstName, lastName) => {
     await fetch(`https://gateway.marvel.com:443/v1/public/creators?firstName=${firstName}%20&lastName=${lastName}&apikey=117b458635106b9721749634b53fb07b`)
@@ -26,13 +24,41 @@ getCreators = async (firstName, lastName) => {
       .then(d => this.setState({comics: d.data.results}));  
       }
 
+handleChange = (event) => {
+this.setState({ value: event.target.value });
+}  
 
-  render() {
-    return (     
-      <div>
+render () {
+  return (
+  <div>
+      <button>Creator</button>
+      <div className="creatorSearch">
+      <input 
+        type="search"
+        placeholder="creator"
+        value={this.state.value}
+        onChange={this.handleChange}
+      />
+      <button onClick={() => this.getCreators.value}>Search</button>
       </div>
-    )
-  }
+
+      <div className="creatorResponse">
+        <ul>
+          {this.state.comics.map(c => 
+            <li key={c.id}>
+              <p> {c.title} </p>
+              <p> {c.description} </p>
+              <img src={c.thumbnail.path + "." +c.thumbnail.extension}/>
+            </li>
+          )}          
+        </ul>
+      </div>
+      
+  </div>
+  )
+}
+
+
 }
 
 
