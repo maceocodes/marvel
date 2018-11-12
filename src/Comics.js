@@ -27,7 +27,7 @@ getComics = async (name) => {
 render() {
   return (
   <div> 
-    <Search loadComics={this.getComics} />
+    <Search loadComics={this.byCreator} />
     <div>
       <ul className="comics">
         {this.state.comics.map(c => 
