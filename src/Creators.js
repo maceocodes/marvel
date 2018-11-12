@@ -32,16 +32,7 @@ byCreator = async (name) => {
 render () {
   return (
       <div>
-      <div>
-            <input 
-              type="search"
-              placeholder="creator"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-           <button onClick={this.byCreator}>Search</button>
-        </div>
-          
+      <Search loadComics={this.byCreator} />
         <ul>
           {this.state.comics.map(c => 
             <li key={c.id}>

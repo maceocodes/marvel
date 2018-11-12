@@ -24,7 +24,7 @@ handleChange = (event) => {
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <button onClick={() => this.props.byCreator(this.state.value)}>Search</button>
+            <button onClick={() => this.props.loadComics(this.state.value)}>Search</button>
         </div>
         )
     }

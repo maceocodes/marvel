@@ -12,7 +12,7 @@ class Comics extends React.Component {
     }
   };
 
-getComics = async (name) => {
+byCharacter = async (name) => {
     await fetch(`https://gateway.marvel.com:443/v1/public/characters?name=${name}&apikey=117b458635106b9721749634b53fb07b`)
       .then(res => res.json())
       .then(json => {
@@ -27,7 +27,7 @@ getComics = async (name) => {
 render() {
   return (
   <div> 
-    <Search loadComics={this.byCreator} />
+    <Search loadComics={this.byCharacter} />
     <div>
       <ul className="comics">
         {this.state.comics.map(c => 
