@@ -1,8 +1,9 @@
 import React from 'react';
-import Heading from  './Heading';
+import Header from  './Header';
 import Search from  './Search';
 import Creators from './Creators';
 import Comics from './Comics';
+import Home from './Home';
 import './App.css';
 import {
   BrowserRouter,
@@ -13,10 +14,10 @@ import {
 const App = () => {
   return (
     <div>
-      <Heading />
+      <Header />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Comics} />
+          <Route path="/" component={Home} />
           <Route path="/bycharacter" component={Comics} />
           <Route path="/bycreator" component={Creators}/>
         </Switch>

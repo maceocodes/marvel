@@ -1,6 +1,13 @@
 import React from 'react';
 import './App.css';
 import Search from  './Search';
+import {
+  CardColumns,
+  Card,
+  CardImg,
+  CardTitle,
+  CardText
+} from 'reactstrap';
 
 class Comics extends React.Component {
   constructor(props) {
@@ -29,16 +36,22 @@ render() {
   <div> 
     <Search loadComics={this.byCharacter} />
     <div>
+    <CardColumns>
       <ul className="comics">
         {this.state.comics.map(c => 
-          <li key={c.id}>
-            <p> {c.title} </p>
-            <p> {c.description} </p>
-            <img src={c.thumbnail.path + "." +c.thumbnail.extension}/>
+          <Card key={c.id}>
+            <CardImg src={c.thumbnail.path + "." +c.thumbnail.extension}/>
             <li>{c.creators.items.map(cr => <li>{cr.name}</li>)}</li>
-          </li>
+              <CardTitle>
+                {c.title} 
+              </CardTitle>
+              <CardText>
+                {c.description}
+              </CardText>
+          </Card>
         )}          
       </ul>
+      </CardColumns>
     </div>
   </div>
   )
