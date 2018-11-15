@@ -17,7 +17,7 @@ const App = () => {
       <Header />
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/bycharacter" component={Comics} />
           <Route path="/bycreator" component={Creators}/>
         </Switch>

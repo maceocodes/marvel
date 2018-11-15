@@ -1,6 +1,14 @@
 import React from 'react';
 import './App.css';
 import Search from './Search';
+import {
+  CardColumns,
+  Card,
+  CardImg,
+  CardTitle,
+  CardText
+} from 'reactstrap';
+
 
 
 
@@ -35,13 +43,15 @@ render () {
       <div>
       <Search loadComics={this.byCreator} />
         <ul>
+        <div className = "Creator">
           {this.state.comics.map(c => 
             <li key={c.id}>
-              <p> {c.title} </p>
+              <h1> {c.title} </h1>
               <p> {c.description} </p>
               <img src={c.thumbnail.path + "." +c.thumbnail.extension}/>
             </li>
-          )}          
+          )} 
+        </div>         
         </ul>
       </div>
   
