@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 import {
     Collapse,
     Navbar,
@@ -24,15 +25,15 @@ class Header extends React.Component {
         return (
             <div>
                 <div className="Navigation">
-                        <Nav navbar>
-                            <NavItem className="Item1">
-                                <NavLink href="/">Home</NavLink>
+                        <Nav>
+                            <NavItem>
+                                <NavLink tag={Link} to="/">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="Link" href="/bycharacter">Search by Character</NavLink>
+                                <NavLink tag={Link} to="/bycharacter">Search by Character</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/bycreator">Search by Creator</NavLink>
+                                <NavLink tag={Link} to="/bycreator">Search by Creator</NavLink>
                             </NavItem>
                         </Nav>
                 </div>

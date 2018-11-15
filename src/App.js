@@ -9,18 +9,24 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import {
+
+   } from 'reactstrap';
 import './App.css';
 
 const App = () => {
   return (
     <div>
-      <Header />
+      
       <BrowserRouter>
+      <div>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/bycharacter" component={Comics} />
           <Route path="/bycreator" component={Creators}/>
         </Switch>
+        </div>
       </BrowserRouter>
     </div>
   )

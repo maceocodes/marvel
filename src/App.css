@@ -11,3 +11,11 @@
   text-align: center;
 }
 
+href {
+  color: #413e3e;
+  text-decoration: none;
+}
+
+.comics CardImg {
+  max-width: 70%;
+}
