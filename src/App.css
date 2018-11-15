@@ -1,11 +1,13 @@
 /* Header Styles */
 
-.Title h2, p {
-  color: red;
+
+.NavItem {
+  color: black;
+  text-decoration: none;
 }
 
-.Header {
+
+.Search {
   text-align: center;
-  font-family: arial;
 }
 

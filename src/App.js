@@ -4,12 +4,12 @@ import Search from  './Search';
 import Creators from './Creators';
 import Comics from './Comics';
 import Home from './Home';
-import './App.css';
 import {
   BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom';
+import './App.css';
 
 const App = () => {
   return (

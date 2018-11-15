@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
 import { Button } from 'reactstrap';
+import './App.css';
 
 
 class Search extends React.Component {
@@ -19,13 +19,13 @@ handleChange = (event) => {
 
     render () {
         return (
-        <div>
+        <div class="Search">
             <input 
               type="search"
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <Button color="secondary" onClick={() => this.props.loadComics(this.state.value)}>Search</Button>
+            <button class="Button" onClick={() => this.props.loadComics(this.state.value)}>Search</button>
         </div>
         )
     }

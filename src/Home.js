@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import {
  } from 'reactstrap';
+ import './App.css';
 
 
 class Home extends React.Component {

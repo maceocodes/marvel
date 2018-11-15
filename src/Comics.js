@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Search from  './Search';
 import {
   CardColumns,
@@ -8,6 +7,8 @@ import {
   CardTitle,
   CardText
 } from 'reactstrap';
+import './App.css';
+
 
 class Comics extends React.Component {
   constructor(props) {
