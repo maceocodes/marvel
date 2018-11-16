@@ -25,7 +25,7 @@ class Header extends React.Component {
         return (
             <div>
                 <div className="Navigation">
-                        <Nav>
+                        <Nav vertical>
                             <NavItem>
                                 <NavLink tag={Link} to="/">Home</NavLink>
                             </NavItem>
@@ -39,7 +39,6 @@ class Header extends React.Component {
                 </div>
                 <div className="Title" >
                     <h2>Marvel Comic Search</h2>
-                    <p>Search comics by Character or Creator</p>
                 </div>    
             </div> 
         )

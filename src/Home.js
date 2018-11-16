@@ -8,7 +8,7 @@ class Home extends React.Component {
     render(props) {
         return (
             <div>
-             <p> some information hear about what this project is and credit to marvel </p>
+             <h6> some information hear about what this project is and credit to marvel </h6>
             </div>
         )
     }
