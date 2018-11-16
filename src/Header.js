@@ -26,15 +26,15 @@ class Header extends React.Component {
             <div>
                 <div className="Navigation">
                         <Nav vertical>
-                            <NavItem>
-                                <NavLink tag={Link} to="/">Home</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/bycharacter">Search by Character</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/bycreator">Search by Creator</NavLink>
-                            </NavItem>
+                            <li>
+                                <NavLink className="NavHome" tag={Link} to="/">Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="Navcharacter" tag={Link} to="/bycharacter">Search by Character</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="Navcreator" tag={Link} to="/bycreator">Search by Creator</NavLink>
+                            </li>
                         </Nav>
                 </div>
                 <div className="Title" >

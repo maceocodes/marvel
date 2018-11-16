@@ -32,6 +32,11 @@ h6 {
   text-decoration: none;
 }
 
-href {
+li 
+.NavHome, 
+.Navcharacter,
+.Navcreator
+{
   text-decoration: none;
+  color: #413e3e;
 }
